@@ -1,0 +1,134 @@
+#toast {
+  position: fixed;
+  z-index: 100000000000000;
+  /* left: 0; */
+  right: 30px;
+  bottom: 30px;
+
+  display: flex;
+  flex-direction: row;
+
+  width: min-content;
+  margin: auto;
+
+  background-color: #333;
+  color: #fff;
+
+  text-align: center;
+
+  /* border-radius: 7px; */
+
+  font-size: 18px;
+  white-space: nowrap;
+  visibility: visible;
+  -webkit-animation: fadein 0.5s, expand 0.5s 0.5s, stay 10s 1s, shrink 0.5s 10s, fadeout 0.5s 10s;
+  animation: fadein 0.5s, expand 0.5s 0.5s, stay 10s 1s, shrink 0.5s 10s, fadeout 0.5s 10s;
+  padding-right: 10px;
+}
+
+#toast .badge {
+  border-radius: 0px;
+}
+
+#toast .img {
+  box-sizing: border-box;
+  padding: 15px;
+  /* margin-right: 10px; */
+}
+#toast #desc {
+  color: #fff;
+  overflow: hidden;
+  white-space: nowrap;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  margin-left: 16px;
+}
+
+.close-button {
+  /* margin-right: 10px; */
+  cursor: pointer;
+}
+
+.resend-button {
+  margin-right: 10px;
+  cursor: pointer;
+  /* border-radius: 7px; */
+  font-size: 15px;
+  padding: 5px;
+}
+
+@-webkit-keyframes fadein {
+  from {
+    bottom: 0;
+    opacity: 0;
+  }
+  to {
+    bottom: 30px;
+    opacity: 1;
+  }
+}
+
+@keyframes fadein {
+  from {
+    bottom: 0;
+    opacity: 0;
+  }
+  to {
+    bottom: 30px;
+    opacity: 1;
+  }
+}
+
+@-webkit-keyframes expand {
+  from {
+    min-width: 50px;
+  }
+  to {
+    min-width: 350px;
+  }
+}
+
+@keyframes expand {
+  from {
+    min-width: 50px;
+  }
+  to {
+    min-width: 350px;
+  }
+}
+@-webkit-keyframes stay {
+  from {
+    min-width: 350px;
+  }
+  to {
+    min-width: 350px;
+  }
+}
+
+@keyframes stay {
+  from {
+    min-width: 350px;
+  }
+  to {
+    min-width: 350px;
+  }
+}
+@-webkit-keyframes shrink {
+  from {
+    min-width: 350px;
+  }
+  to {
+    min-width: 50px;
+  }
+}
+
+@keyframes shrink {
+  from {
+    min-width: 350px;
+  }
+  to {
+    min-width: 50px;
+  }
+}

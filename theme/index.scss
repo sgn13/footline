@@ -1,0 +1,22 @@
+@import './reset.scss';
+@import './components/pagination.scss';
+@import './components/editor.scss';
+
+@font-face {
+  font-family: 'Roboto';
+  src: local('Roboto'), url('../assets/fonts/Roboto/Roboto-Regular.ttf') format('truetype');
+}
+
+html {
+  font-family: 'Roboto', sans-serif;
+}
+
+hr {
+  margin: 0;
+}
+
+.active {
+  background: white;
+  color: #0467a0;
+  border: 1px solid #0467a0 !important;
+}
