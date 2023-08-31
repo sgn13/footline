@@ -5,6 +5,7 @@
     height: 100vh;
     width: 100vw;
     background-color: #eee;
+    color:$gray-300;
     overflow: hidden;
   }
   
@@ -47,12 +48,13 @@
   .left_container {
     position: relative;
     display: flex;
-    align-items: center;
+    // align-items: center;
     justify-content: center;
     flex-direction: column;
     width: 100%;
     height: 100%;
     background-color: #fff;
+    color:$gray-700;
   }
   
   .right_container {
@@ -60,9 +62,19 @@
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    text-align: center;
     width: 100%;
     height: 100%;
-    background: linear-gradient(45deg, #101828 0%, #164996 100%);
+    background: linear-gradient(45deg, #355161 0%, $primary-color 100%);
+    h2{
+      font-size: 2.25rem;
+      margin: 1rem 0;
+    }
+    p{
+      font-weight: light;
+      font-size: 0.85rem;
+      letter-spacing: 0.5px;
+    }
   }
   .tenant_right_containerr {
     display: flex;

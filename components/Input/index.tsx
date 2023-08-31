@@ -25,7 +25,7 @@ const StyledInput = styled.input<BaseInputType>`
     ${({ errors, value, required }) =>
       errors && !value && required ? theme.color.red : theme.color.gray};
 
-  border-radius: 4px;
+  border-radius: 8px;
 
   :-webkit-autofill {
     :focus {

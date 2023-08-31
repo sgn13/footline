@@ -40,8 +40,9 @@ const StyledClear = styled.div`
 `;
 
 export const BaseLabel = styled(Text)`
-  display: inline-block;
-  font-weight: 600;
+  font-size: 1rem;
+  display: flex;
+  align-items: center;
   margin-bottom: 0.75rem;
 `;
 export const BaseHelpText = styled(Text)`

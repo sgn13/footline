@@ -1,3 +1,4 @@
+@import './variables';
 @import './reset.scss';
 @import './components/pagination.scss';
 @import './components/editor.scss';
@@ -8,7 +9,7 @@
 }
 
 html {
-  font-family: 'Roboto', sans-serif;
+  font-family:Arial, Helvetica, sans-serif;
 }
 
 hr {

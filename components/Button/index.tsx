@@ -29,7 +29,6 @@ const StyledButton = styled.button<BaseButtonType>`
     width:fit-content;
     font-size: ${size === 'lg' ? 1.875 : size === 'md' ? 1.375 : 1}rem;
     font-family: ${primary ? theme.font.primary : theme.font.secondary};
-    font-weight: bold;
     color: ${
       color
         ? color

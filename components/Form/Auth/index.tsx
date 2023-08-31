@@ -11,14 +11,14 @@ import * as Yup from 'yup';
 import { Formik, Form } from 'formik';
 
 const AuthFormWrapper = styled.div`
-  background-color: #fff;
-  border-radius: 7px;
-  box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
-  position: relative;
-  overflow: hidden;
-  width: 60vw;
-  max-width: 100%;
-  min-height: 70vh;
+  // background-color: #fff;
+  // border-radius: 7px;
+  // box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
+  // position: relative;
+  // overflow: hidden;
+  // width: 60vw;
+  // max-width: 100%;
+  // min-height: 70vh;
 `;
 
 const OverlayWrapper = styled.div`
@@ -67,14 +67,14 @@ const FormContainer = styled.div`
 `;
 
 const FormWrapper = styled(Form)`
-  background-color: ${theme.primary.default};
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-direction: column;
-  padding: 0 50px;
-  height: 100%;
-  position: relative;
+  // background-color: ${theme.primary.default};
+  // display: flex;
+  // align-items: center;
+  // justify-content: center;
+  // flex-direction: column;
+  // padding: 0 50px;
+  // height: 100%;
+  // position: relative;
 `;
 
 const FormTitle = styled.span`
@@ -98,6 +98,10 @@ const FormTitle = styled.span`
   }
 `;
 
+const TitleContent = styled.div`
+  margin: 0 0 2rem 0;
+`;
+
 const Link = styled.p`
   margin: 0.5rem auto 0 auto;
 `;
@@ -112,26 +116,26 @@ const FormLogo = styled.div`
 `;
 
 const FormContent = styled.div`
-  margin-top: 1.5rem;
+  // margin-top: 1.5rem;
 
-  width: 90%;
+  // width: 90%;
 
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
+  // display: flex;
+  // flex-direction: column;
+  // justify-content: center;
+  // align-items: center;
 
-  color: ${theme.color.white};
+  // color: ${theme.color.white};
 `;
 
 const LoginButton = styled(Button)`
   width: min-content;
 
-  background: ${theme.color.white};
+  background: ${theme.primary.default};
 
   -webkit-border-radius: 24;
   -moz-border-radius: 24;
-  border-radius: 24px;
+  border-radius: 8px;
   font-family: Arial;
   font-size: 20px;
   padding: 10px 20px 10px 20px;
@@ -139,7 +143,7 @@ const LoginButton = styled(Button)`
 
   margin: 1rem auto auto;
 
-  color: black;
+  color: ${theme.color.white};
 `;
 
 export const AuthFormContainer: React.FC<
@@ -167,6 +171,7 @@ export const AuthPageWrapper = styled.div`
 
 export const AuthForm: React.FC<AuthFormType> = ({
   formTitle,
+  formDesc,
   elements,
   buttonName,
   actions = [],
@@ -197,16 +202,15 @@ export const AuthForm: React.FC<AuthFormType> = ({
       validateOnMount={false}
       validateOnChange={false}
       validateOnBlur={false}
-      enableReinitialize
-    >
+      enableReinitialize>
       {({ values, errors, handleChange }) => {
         return (
           <FormWrapper>
-            <FormLogo>
-              <img src={require('assets/images/logo.png').default} />
-            </FormLogo>
             <FormContent>
-              {formTitle && <FormTitle>{formTitle}</FormTitle>}
+              <TitleContent>
+                {formTitle && <FormTitle>{formTitle}</FormTitle>}
+                {formDesc && <p>{formDesc}</p>}
+              </TitleContent>
               {elements.email && (
                 <Input
                   name="email"

@@ -37,19 +37,24 @@ const Login = ({ login, notification, resetNotification, isSubmitting }) => {
         <div className="main_inner_container">
           <div className="flex_container">
             <div className="left_container">
-              <div>
-                <h4>LOGIN</h4>
-                <p>Welcome! Please enter your details</p>
+              <div style={{ padding: '0 22%' }}>
+                <AuthForm
+                  formTitle={'Login'}
+                  formDesc={'Welcome! Please enter your details'}
+                  elements={{ email: true, password: true }}
+                  buttonName={'Login'}
+                  onSubmit={(data) => {}}
+                />
               </div>
             </div>
             <div className="right_container">
               <div style={{ padding: '0 22%' }}>
                 <h6>Nice to see you again.</h6>
                 <h2> WELCOME BACK</h2>
-                <h6>
+                <p>
                   Lorem ipsum dolor sit amet consectetur adipisicing elit. Modi ad debitis autem
                   explicabo repellendus nesciunt veritatis sed assumenda cumque aliquam?
-                </h6>
+                </p>
               </div>
             </div>
           </div>

@@ -30,6 +30,7 @@ const StyledText = styled.span<BaseTextType>`
     icon &&
     `
       display: flex;
+      align-items:center;
       text-align:left;
       svg{
         margin-right: .5rem;
