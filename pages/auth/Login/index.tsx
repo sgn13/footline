@@ -33,25 +33,28 @@ const Login = ({ login, notification, resetNotification, isSubmitting }) => {
 
   return (
     <>
-      hii
-      {/* <AuthPageWrapper>
-        <AuthFormContainer
-          overlay={
-            <LoginOverlay>
-              <LoginAnimation />
-            </LoginOverlay>
-          }
-          form={
-            <AuthForm
-              formTitle={'LOGIN'}
-              isSubmitting={isSubmitting}
-              elements={{ email: true, password: true }}
-              buttonName={'Login'}
-              onSubmit={async (values) => await login({ values })}
-            />
-          }
-        />
-      </AuthPageWrapper> */}
+      <div className="main_container">
+        <div className="main_inner_container">
+          <div className="flex_container">
+            <div className="left_container">
+              <div>
+                <h4>LOGIN</h4>
+                <p>Welcome! Please enter your details</p>
+              </div>
+            </div>
+            <div className="right_container">
+              <div style={{ padding: '0 22%' }}>
+                <h6>Nice to see you again.</h6>
+                <h2> WELCOME BACK</h2>
+                <h6>
+                  Lorem ipsum dolor sit amet consectetur adipisicing elit. Modi ad debitis autem
+                  explicabo repellendus nesciunt veritatis sed assumenda cumque aliquam?
+                </h6>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
       {!!(notification && notification.length) && (
         <NotificationComponent data={notification[0]} resetNotification={resetNotification} />
       )}

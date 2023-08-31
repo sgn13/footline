@@ -16,14 +16,22 @@ import ExampleRoute from 'pages/example/routes';
 import IndexHOC from 'hoc/IndexHOC';
 
 import { app } from 'constants/url';
+import Calendar from 'pages/Calendar';
 
-const routes = [
+export const routes = [
   {
     title: 'Home',
     bodyConfig: { use: true, title: true, goBack: true },
     path: '/',
     exact: true,
     component: IndexHOC(Index),
+  },
+  {
+    title: 'Calendar',
+    bodyConfig: { use: true, title: true, goBack: true },
+    path: app.calendar.root,
+    exact: true,
+    component: IndexHOC(Calendar),
   },
   ...ExampleRoute,
   {

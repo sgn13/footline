@@ -28,7 +28,7 @@ const color = {
 };
 
 const basic = {
-  primary: { default: '#0467A0', text: '#ffffff' },
+  primary: { default: '#233A47', text: '#ffffff' },
   secondary: { default: '#c83734', text: '#ffffff' },
 };
 
@@ -115,7 +115,8 @@ const theme = {
   state,
   font,
   mixin,
-  constant: { bodyHeight: 'calc(100vh - 56px)', authBodyHeight: '100vh', appBar: '56px' },
+  // constant: { bodyHeight: 'calc(100vh - 56px)', authBodyHeight: '100vh', appBar: '56px' },
+  constant: { bodyHeight: 'calc(100vh )', authBodyHeight: '100vh', appBar: '56px' },
 };
 
 export type Theme = typeof theme;

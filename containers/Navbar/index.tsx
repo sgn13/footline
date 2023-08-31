@@ -18,7 +18,8 @@ type BaseNavbarType = React.ComponentProps<'div'> &
   StyledBaseComponentType & { type?: any; ref?: any };
 
 const NavbarWrap = styled.div`
-  background: ${theme.primary.default};
+  // background: ${theme.primary.default};
+  background: white;
   box-shadow: 0 2px 4px 0 rgba(121, 130, 145, 0.2);
   height: 56px;
   width: 100%;
@@ -76,7 +77,7 @@ const TitleWrap = styled.div`
   }
 `;
 const Title = styled.div`
-  color: white;
+  // color: white;
   font-weight: bold;
   padding-left: 1rem;
 `;
@@ -84,7 +85,7 @@ const Breadcrumbs = styled.div`
   display: flex;
   font-size: 0.75rem;
   font-weight: bold;
-  color: #8f97a6;
+  // color: #8f97a6;
   align-items: center;
   margin-top: 0.125rem;
 `;
@@ -95,7 +96,8 @@ const Breadcrumb = styled.div`
 const ActionsWrap = styled.div`
   padding: 0.5rem 1.5rem;
   display: flex;
-  color: white;
+  gap: 1.25rem;
+  color: #565e61;
   justify-content: space-between;
   align-items: center;
 `;
@@ -111,8 +113,6 @@ const BaseNavbar: React.FC<BaseNavbarType> = (props) => {
 
   return (
     <NavbarWrap>
-      <Logo src={''} />
-
       <TitleWrap>
         <Title>
           {title}
@@ -127,7 +127,7 @@ const BaseNavbar: React.FC<BaseNavbarType> = (props) => {
         </Title>
       </TitleWrap>
       <ActionsWrap>
-        <BsThreeDotsVertical
+        {/* <BsThreeDotsVertical
           onClick={() => {
             setMenu(false);
             setNotification(false);
@@ -142,14 +142,12 @@ const BaseNavbar: React.FC<BaseNavbarType> = (props) => {
             <MenuItem icon={<AiOutlineDelete />}>Delete</MenuItem>
           </Menu>
         )}
-
         {menu && (
           <Menu>
             <MenuItem icon={<FiRadio />}>Publish</MenuItem>
             <MenuItem icon={<BsPlusCircle />}>Publish and add new</MenuItem>
           </Menu>
-        )}
-
+        )} */}
         <IoMdNotificationsOutline
           id="notification"
           style={{ fontSize: '25px' }}
@@ -160,22 +158,23 @@ const BaseNavbar: React.FC<BaseNavbarType> = (props) => {
             setNotification((prev) => !prev);
           }}
         />
-
         {notification && (
           <Menu>
             <MenuItem>No New Notification</MenuItem>
           </Menu>
         )}
-        <Avatar
-          id="avatar"
-          src="https://randomuser.me/api/portraits/men/1.jpg"
+        <div
+          style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', cursor: 'pointer' }}
           onClick={() => {
             setMenu(false);
             setNotification(false);
             setDots(false);
             setAvatar(!avatar);
-          }}
-        />
+          }}>
+          <Avatar id="avatar" src="https://randomuser.me/api/portraits/men/1.jpg" />
+          <div>John Doe</div>
+        </div>
+
         {avatar && (
           <Menu onClick={logout}>
             <MenuItem icon={<FiLogOut />}>Logout</MenuItem>

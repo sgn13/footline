@@ -10,9 +10,7 @@ const FooterWrap = styled.div`
 `;
 
 const Footer: React.FC = () => {
-  return (
-    <FooterWrap>© {new Date().getFullYear()} Mangosoftsolution | All Rights Reserved.</FooterWrap>
-  );
+  return <FooterWrap>© All Rights Reserved.</FooterWrap>;
 };
 
 export default Footer;

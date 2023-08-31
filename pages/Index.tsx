@@ -72,70 +72,7 @@ const bardata = {
 const Index: React.FC<PropsFromRedux> = ({}) => {
   return (
     <>
-      <Row>
-        <Col lg={3}>
-          <ProfileContainer data={[{ key: 'Name', value: 'John Doe' }]} border={false} />
-        </Col>
-        <Col lg={6}>
-          {' '}
-          <DetailWrapper>
-            <Cards>
-              {data.map((item) => {
-                return (
-                  <Card>
-                    <FiUsers />
-                    <div>
-                      {item.name}
-                      <br />
-                      <span> {item.number}</span>
-                    </div>
-                  </Card>
-                );
-              })}
-            </Cards>{' '}
-            <Cards>
-              {data.map((item) => {
-                return (
-                  <Card>
-                    <FiUsers />
-                    <div>
-                      {item.name}
-                      <br />
-                      <span> {item.number}</span>
-                    </div>
-                  </Card>
-                );
-              })}
-            </Cards>
-          </DetailWrapper>
-        </Col>
-      </Row>
-      <Header>Charts</Header>
-      <Row>
-        <Col lg={5}>
-          <Doughnut chartName={'Data'} label={'Label'} datas={doughnutdata} />
-        </Col>{' '}
-        <Col lg={5}>
-          <Row>
-            <Col lg={12}>
-              <Line chartName={'Data'} label={'Label'} datas={linedata} />
-              <br />
-            </Col>
-          </Row>
-          <Row>
-            <Col lg={12}>
-              <Bar chartName={'Data'} label={'Label'} datas={bardata} />
-            </Col>
-          </Row>
-        </Col>
-      </Row>
-      <HelpBar>
-        {' '}
-        <BiSupport title="Remote Support" />
-        <BsChatRightDots title="Chat Support" />
-        <BsBookFill title="Knowledge Base" />
-        <BiHelpCircle title="Help" />
-      </HelpBar>
+      <h2>Hello</h2>
     </>
   );
 };

@@ -39,19 +39,19 @@ const Layout = ({
   fetchPermissions,
   isLoading,
 }) => {
-  useEffect(() => {
-    if (Notification.permission !== 'granted') {
-      Notification.requestPermission();
-    }
-  }, []);
+  // useEffect(() => {
+  //   if (Notification.permission !== 'granted') {
+  //     Notification.requestPermission();
+  //   }
+  // }, []);
 
   const [collapsed, setCollapsed] = useState(false);
   const [active, setActive] = useState('');
 
-  useEffect(() => {
-    !me && fetchMe();
-    fetchPermissions({});
-  }, []);
+  // useEffect(() => {
+  //   !me && fetchMe();
+  //   fetchPermissions({});
+  // }, []);
 
   if (isLoading) {
     return <Loader />;
@@ -59,7 +59,6 @@ const Layout = ({
   return (
     <>
       <div id="overlays"></div>
-      <Nav me={me} />
       <AppBody>
         <Sidebar
           sidebarItems={sidebar}
@@ -68,14 +67,17 @@ const Layout = ({
           active={active}
           setActive={setActive}
         />
-        <AppBodyWrapper>
-          <Content />
-          <Footer />
-        </AppBodyWrapper>
+        <div style={{ width: '100%' }}>
+          <Nav me={me} />
+          <AppBodyWrapper>
+            <Content />
+            {/* <Footer /> */}
+          </AppBodyWrapper>
+        </div>
       </AppBody>
-      {!!(notification && notification.length) && (
+      {/* {!!(notification && notification.length) && (
         <NotificationComponent data={notification[0]} resetNotification={resetNotification} />
-      )}
+      )} */}
     </>
   );
 };

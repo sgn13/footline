@@ -1,6 +1,14 @@
 import { app } from 'constants/url';
 import React from 'react';
-import { RiDashboardLine } from 'react-icons/ri';
+import { Ri4KFill, RiDashboardLine } from 'react-icons/ri';
+import {
+  FaAccessibleIcon,
+  FaAdn,
+  FaAngellist,
+  FaCalendar,
+  FaCalendarAlt,
+  FaHome,
+} from 'react-icons/fa';
 
 export const sidebar = [
   {
@@ -13,30 +21,36 @@ export const sidebar = [
 
 export const IndexSidebar = ({}) => [
   {
-    icon: <RiDashboardLine />,
+    icon: <FaHome />,
     label: 'Home',
     location: 'top',
     path: '/',
   },
   {
-    icon: <RiDashboardLine />,
+    icon: <FaCalendarAlt />,
+    label: 'Calendar',
+    location: 'top',
+    path: app.calendar.root,
+  },
+  {
+    icon: <FaAccessibleIcon />,
     label: 'Example 1',
     location: 'top',
     path: app.example1.root,
   },
   {
-    icon: <RiDashboardLine />,
+    icon: <FaAdn />,
     label: 'Example 2',
     location: 'top',
     path: app.example2.root,
   },
   {
-    icon: <RiDashboardLine />,
+    icon: <FaAngellist />,
     label: 'Sidebar',
     location: 'top',
     children: [
       {
-        icon: <RiDashboardLine />,
+        icon: <Ri4KFill />,
         label: 'Sidebar Children',
         location: 'top',
         path: app.example1.root,

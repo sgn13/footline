@@ -50,6 +50,7 @@ const BaseSidebarItem: React.FC<BaseSidebarItemType> = (props) => {
 
     &:hover {
       color: white;
+      opacity: 0.4;
 
       ${collapsed &&
       item.label &&
@@ -59,7 +60,7 @@ const BaseSidebarItem: React.FC<BaseSidebarItemType> = (props) => {
           font-size:15px;
           padding:4px;
           border-radius:4px;
-          opacity:0.9;
+          opacity:0.4;
           transition:0.5s;
           background:${theme.secondary.default};
           color:white;

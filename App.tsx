@@ -8,7 +8,7 @@ import Loader from 'components/Loader';
 import PageTitle from 'components/PageTitle';
 import ScrollToTop from 'components/ScrollToTop';
 
-import { messageRoutes, authRoutes } from './routes';
+import { messageRoutes, authRoutes, routes } from './routes';
 import Body from 'containers/Body';
 import { fetchMe } from 'store/app/actions';
 import { useEffect } from 'react';
@@ -81,11 +81,24 @@ const AppRouter: React.FC<PropsFromRedux> = ({ fetchPermissions, fetchMe, me }) 
               )
             }
           /> */}
-          <Route
+          {/* <Route
             children={(props) =>
-              sessionStorage.getItem('token') ? <Layout {...props} /> : <Redirect to="/login" />
+              sessionStorage.getItem('token') ? <Layout {...props} /> : <Redirect to="/" />
             }
-          />
+          /> */}
+          <Route children={(props) => <Layout {...props} />} />
+          {/* {routes.map((route, idx) => (
+            <Route
+              key={idx}
+              path={route.path}
+              exact={route.exact}
+              render={(props) => (
+                <Body config={route.bodyConfig} title={route.title}>
+                  <route.component {...props} />
+                </Body>
+              )}
+            />
+          ))} */}
         </Switch>
       </React.Suspense>
     </BrowserRouter>

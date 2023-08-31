@@ -16,7 +16,7 @@
     "resolveJsonModule": true,
     "outDir": "./build",
     "rootDir": "./",
-    "baseUrl": "."
+    "baseUrl": ".",
   },
   "include": ["**/*"],
   "exclude": ["public", "build", "node_modules", "coverage-ts"]

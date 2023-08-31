@@ -56,36 +56,31 @@ const CondenseNavigationMenuItem = styled(BaseSidebarItem)`
     transition: 200ms;
   }
 `;
-const SidebarCorner = styled.div<{ collapsed }>`
-  position: absolute;
-  left: 232px;
-  top: 0%;
-  transition: 200ms ease-in-out;
-  z-index: -500;
-  &::before {
-    content: '';
-    z-index: 200;
-    position: absolute;
-
-    left: 8px;
-    background-color: transparent;
-    bottom: -50px;
-    height: 50px;
-    width: 25px;
-    border-top-left-radius: 25px;
-    box-shadow: 0 -25px 0 0 ${theme.primary.default};
-  }
-
-  ${({ collapsed }) => collapsed && `left:45px`}
-`;
 
 const BaseSidebar: React.FC<BaseSidebarType> = (props) => {
   const history = useHistory();
   const { mobile, sidebarItems, collapsed, setCollapsed, active, setActive } = props;
 
+  const NavigationMenuItem = styled.div<{ isOpen }>`
+    width: 100%;
+    display: flex;
+    padding: 5px 12px;
+    cursor: pointer;
+  color:white;
+    flex-direction: column;
+    align-items: center;
+    padding-left: ${collapsed ? `7px` : `10px`};
+    border: none;
+    border-radius: 6px;
+    outline: none;
+    transition: 300ms;
+    text-decoration: none;
+    }
+  `;
+
   return (
     <StyledSidebarWrapper collapsed={collapsed} mobile={mobile}>
-      <SidebarCorner collapsed={collapsed} />
+      <NavigationMenuItem>LOGO</NavigationMenuItem>
       <NavTop>
         {sidebarItems
           .filter((item) => item.location === 'top')
