@@ -77,14 +77,14 @@ const FormWrapper = styled(Form)`
   // position: relative;
 `;
 
-const FormTitle = styled.span`
+const FormTitle = styled.div`
   font-weight: 600;
   font-size: 1.5rem;
   line-height: 2.43rem;
 
   position: relative;
 
-  margin-bottom: 2rem;
+  margin-bottom: 0.25rem;
 
   &::before {
     content: '';

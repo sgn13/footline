@@ -34,7 +34,7 @@ export const IndexSidebar = ({}) => [
   },
   {
     icon: <FaAccessibleIcon />,
-    label: 'Example 1',
+    label: 'Table',
     location: 'top',
     path: app.example1.root,
   },
