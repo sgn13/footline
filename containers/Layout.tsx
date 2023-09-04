@@ -9,7 +9,7 @@ import Content from 'containers/Content';
 
 import Sidebar from 'containers/Sidebar';
 
-import { styled } from 'theme/styled-components';
+import theme, { styled } from 'theme/styled-components';
 import Footer from 'containers/Footer';
 import { AppState } from 'store/reducer';
 
@@ -20,6 +20,8 @@ import NotificationComponent from 'components/Notification/index';
 import Loader from 'components/Loader';
 
 const AppBody = styled.div`
+  background-color: ${theme.tertiary.default};
+
   display: flex;
 `;
 const AppBodyWrapper = styled.div`

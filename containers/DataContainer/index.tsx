@@ -53,8 +53,7 @@ const ExportReactCSV = ({ csvHeaders, csvData, fileName }) => (
       icon={<FaFileCsv />}
       variant="success"
       style={{ width: 'fit-content', textDecoration: 'none' }}
-      size="sm"
-    >
+      size="sm">
       Export CSV
     </Button>
   </CSVLink>
@@ -168,8 +167,7 @@ const DataContainer = ({
               size="sm"
               onClick={() => funktion({ query: { perPage, page } })}
               variant="success"
-              disabled={isLoading}
-            >
+              disabled={isLoading}>
               {isLoading ? (
                 'Loading…'
               ) : (
@@ -181,43 +179,6 @@ const DataContainer = ({
           )}
         </div>
       </TableNav>
-      {!!(showPerPage || showPagination) && funktion && (
-        <TableNav>
-          {!!showPerPage && (
-            <select
-              value={perPage}
-              onChange={(e) => {
-                setPerPage(e.target.value);
-                setPage(1);
-                funktion({
-                  query: {
-                    perPage: Number(e.target.value),
-                    page: 1,
-                  },
-                });
-              }}
-            >
-              <option value={5}>5</option>
-              <option value={10}>10</option>
-              <option value={25}>25</option>
-              <option value={50}>50</option>
-              <option value={100}>100</option>
-            </select>
-          )}
-          {!!showPagination && funktion && (
-            <Pagination
-              className="pagination-bar"
-              currentPage={page}
-              totalCount={metadata.totalCount}
-              perPage={perPage}
-              onPageChange={(page) => {
-                setPage(page);
-                funktion({ query: { perPage, page } });
-              }}
-            />
-          )}
-        </TableNav>
-      )}
 
       {tableNavChild && <TableNav>{tableNavChild}</TableNav>}
 
@@ -256,6 +217,42 @@ const DataContainer = ({
           </>
         )}
       />
+      {!!(showPerPage || showPagination) && funktion && (
+        <TableNav>
+          {!!showPerPage && (
+            <select
+              value={perPage}
+              onChange={(e) => {
+                setPerPage(e.target.value);
+                setPage(1);
+                funktion({
+                  query: {
+                    perPage: Number(e.target.value),
+                    page: 1,
+                  },
+                });
+              }}>
+              <option value={5}>5</option>
+              <option value={10}>10</option>
+              <option value={25}>25</option>
+              <option value={50}>50</option>
+              <option value={100}>100</option>
+            </select>
+          )}
+          {!!showPagination && funktion && (
+            <Pagination
+              className="pagination-bar"
+              currentPage={page}
+              totalCount={metadata.totalCount}
+              perPage={perPage}
+              onPageChange={(page) => {
+                setPage(page);
+                funktion({ query: { perPage, page } });
+              }}
+            />
+          )}
+        </TableNav>
+      )}
     </TableWrapper>
   );
 };

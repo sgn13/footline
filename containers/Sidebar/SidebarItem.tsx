@@ -10,15 +10,17 @@ const NavItemContents = styled.div<{ collapsed }>`
   width: ${({ collapsed }) => (collapsed ? `2rem` : '14rem;')};
   height: 2rem;
   align-items: center;
+  padding: 1.125rem;
+  font-size: 1.125rrem;
 `;
 
 const Label = styled.span`
   display: flex;
   flex: 1;
   overflow: hidden;
-  font-size: 0.875rem;
+  font-size: 1rem;
 
-  font-weight: 600;
+  // font-weight: 600;
   transition: 200ms;
   margin-left: 1rem;
 `;
@@ -41,17 +43,17 @@ const BaseSidebarItem: React.FC<BaseSidebarItemType> = (props) => {
     flex-direction: column;
     align-items: center;
     padding-left: ${collapsed ? `7px` : `10px`};
-    color: ${change ? `${theme.color.white}` : `${theme.color.white}`};
+    // color: ${change ? `${theme.color.white}` : `${theme.color.white}`};
+    color: ${theme.color.gray_700};
     border: none;
-    border-radius: 6px;
+    // border-radius: 6px;
     outline: none;
     transition: 300ms;
     text-decoration: none;
 
     &:hover {
+      background-color: ${theme.primary_light.default};
       color: white;
-      opacity: 0.4;
-
       ${collapsed &&
       item.label &&
       `::after {
@@ -69,7 +71,7 @@ const BaseSidebarItem: React.FC<BaseSidebarItemType> = (props) => {
           position: absolute;
           pointer-events:none;
         }
-    `}
+    `};
     }
   `;
 

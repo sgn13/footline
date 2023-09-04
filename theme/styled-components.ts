@@ -16,6 +16,8 @@ const color = {
   orange: '#FF7F00',
   red: '#FF0000',
   gray: '#6c757d',
+  gray_200:'#E1DEDE',
+  gray_700:'#565E61',
   white: '#ffffff',
   black: '#000000',
   darkGray: '#ccc',
@@ -29,7 +31,11 @@ const color = {
 
 const basic = {
   primary: { default: '#233A47', text: '#ffffff' },
+  primary_light: { default: '#acb8bf', text: '#ffffff' },
   secondary: { default: '#c83734', text: '#ffffff' },
+  tertiary: { default: '#F5F7FB', text: '#ffffff' },
+  
+  white: { default: '#FFFFFF', text: '#ffffff' },
 };
 
 const font = { primary: '', secondary: '' };

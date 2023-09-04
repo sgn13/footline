@@ -15,8 +15,10 @@ const StyledSidebarWrapper = styled.div<{ collapsed?: boolean; mobile?: boolean 
   height: ${theme.constant.bodyHeight};
   top: 0;
   z-index: 100;
-  padding: 12px 0;
-  background-color: ${theme.primary.default};
+  // padding: 12px 0;
+  // background-color: ${theme.primary.default};
+  background-color: ${theme.white.default};
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 1px 2px 0px;
   display: flex;
   flex-direction: column;
   position: relative;
@@ -52,6 +54,7 @@ const NavBottom = styled.div``;
 const CondenseNavigationMenuItem = styled(BaseSidebarItem)`
   width: 100%;
   height: 40px;
+  color: #555;
   & svg {
     transition: 200ms;
   }
@@ -64,14 +67,15 @@ const BaseSidebar: React.FC<BaseSidebarType> = (props) => {
   const NavigationMenuItem = styled.div<{ isOpen }>`
     width: 100%;
     display: flex;
-    padding: 5px 12px;
+    padding:2rem;
     cursor: pointer;
-  color:white;
+  color:${theme.primary.default};
+  font-size:2rem;
+  font-weight:500;
     flex-direction: column;
     align-items: center;
     padding-left: ${collapsed ? `7px` : `10px`};
     border: none;
-    border-radius: 6px;
     outline: none;
     transition: 300ms;
     text-decoration: none;

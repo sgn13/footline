@@ -9,7 +9,6 @@ const BodyHeaderWrapper = styled.div`
   justify-content: space-between;
   margin-bottom: 2rem;
   align-items: center;
-
   span {
     font-weight: bold;
     font-size: 1.5rem;

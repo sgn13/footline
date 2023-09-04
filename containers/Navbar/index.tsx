@@ -18,8 +18,8 @@ type BaseNavbarType = React.ComponentProps<'div'> &
   StyledBaseComponentType & { type?: any; ref?: any };
 
 const NavbarWrap = styled.div`
-  // background: ${theme.primary.default};
-  background: white;
+  background: ${theme.primary.default};
+  // background: white;
   box-shadow: 0 2px 4px 0 rgba(121, 130, 145, 0.2);
   height: 56px;
   width: 100%;
@@ -97,7 +97,7 @@ const ActionsWrap = styled.div`
   padding: 0.5rem 1.5rem;
   display: flex;
   gap: 1.25rem;
-  color: #565e61;
+  color: ${theme.color.gray_200};
   justify-content: space-between;
   align-items: center;
 `;

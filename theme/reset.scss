@@ -135,3 +135,14 @@ table {
     border-collapse: collapse;
     border-spacing: 0;
 }
+tr:nth-child(even) {
+    background-color: #F5F7FB;
+  }
+
+  th, td { 
+    padding: 15px !important; 
+} 
+
+.table > :not(:first-child) {
+    border-top: 1px solid silver;
+}

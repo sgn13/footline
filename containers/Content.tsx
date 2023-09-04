@@ -18,8 +18,8 @@ const ContentBody = styled.main`
   overflow-y: auto;
 
   // background: rgba(4, 103, 160, 0.01);
-  background: #f4f7fb;
-  border-radius: 1rem;
+  background: ${theme.white.default};
+  border-radius: 0.5rem;
   margin: 1rem;
 
   ${theme.mixin.scrollbar({ size: '1em', foregroundColor: 'slategray' })};

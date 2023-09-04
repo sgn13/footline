@@ -1,7 +1,7 @@
 import { StyledBaseComponentType } from 'components/BaseComponent/types';
 import { StyledMenuItemType } from './types';
 import React from 'react';
-import { styled } from 'theme/styled-components';
+import theme, { styled } from 'theme/styled-components';
 
 type BaseMenuItemType = React.ComponentProps<'menuitem'> &
   StyledMenuItemType &
@@ -16,7 +16,6 @@ const MenuItemWrap = styled.div`
   justify-content: space-between;
   align-items: center;
   border-radius: 4px;
-  color: black;
   cursor: pointer;
 `;
 

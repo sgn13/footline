@@ -51,6 +51,7 @@ const Search = ({
   return (
     <div>
       <input
+        style={{ padding: '0.5rem 0.75rem', border: '1px solid silver', borderRadius: '8px' }}
         placeholder="Search Here"
         onChange={
           autoSearch
@@ -68,11 +69,11 @@ const Search = ({
           }
         }}
       />
-      {!autoSearch && (
+      {/* {!autoSearch && (
         <button onClick={handleSearch} disabled={!searchKey}>
           {isSearched && searchKey ? <FaBan /> : <FaSearch />}
         </button>
-      )}
+      )} */}
     </div>
   );
 };

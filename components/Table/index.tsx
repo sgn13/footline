@@ -31,9 +31,9 @@ const Table = ({
     <div className={'table__container'}>
       <table className="table table-hover d-none d-sm-table base__table">
         <thead>
-          <tr>
+          <tr style={{ background: '#F5F7FA', border: 'none' }}>
             {!!(tableSelection && setTableSelection) && (
-              <th>
+              <th style={{ border: 'none' }}>
                 <input
                   type="checkbox"
                   checked={includesEvery({
@@ -62,10 +62,10 @@ const Table = ({
                     {t.value && (
                       <th
                         key={i}
-                        style={t.styles}
-                        className={t.value === 'Action' && 'action-style'}
-                      >
-                        <div style={{ display: 'flex' }}>
+                        // style={t.styles}
+                        style={{ border: 'none' }}
+                        className={t.value === 'Action' && 'action-style'}>
+                        <div style={{ display: 'flex', border: 'none' }}>
                           <span className={t.value === 'Action' && 'action-style'}>{t.value}</span>
                         </div>
                       </th>
@@ -84,8 +84,7 @@ const Table = ({
                 <tr
                   key={bodyIndex}
                   onClick={() => onClick && onClick({ item })}
-                  onDoubleClick={() => onDoubleClick && onDoubleClick({ item })}
-                >
+                  onDoubleClick={() => onDoubleClick && onDoubleClick({ item })}>
                   {!!(tableSelection && setTableSelection) && (
                     <td>
                       <input
