@@ -29,7 +29,7 @@ const BaseSidebarItem: React.FC<BaseSidebarItemType> = (props) => {
   const { collapsed, active, item, history, setActive } = props;
   const [change, setChange] = useState(false);
   const [isOpen, setIsOpen] = useState(false);
-
+  console.log(item, 'item');
   useEffect(() => {
     active == item.label ? setChange(true) : setChange(false);
   }, [active]);

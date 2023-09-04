@@ -12,6 +12,8 @@ import { BsPlusCircle, BsThreeDotsVertical, BsArrowUpRight } from 'react-icons/b
 import { FiLogOut } from 'react-icons/fi';
 import { AiOutlineEye, AiOutlineDelete } from 'react-icons/ai';
 import { logout } from 'store/app/actions';
+import BaseSidebarItem from 'containers/Sidebar/SidebarItem';
+import { FaAngleLeft, FaAngleRight } from 'react-icons/fa';
 
 type BaseNavbarType = React.ComponentProps<'div'> &
   StyledNavbarType &
@@ -66,15 +68,15 @@ const TitleWrap = styled.div`
   flex-direction: column;
   justify-content: space-between;
   position: relative;
-  &::after {
-    content: '';
-    position: absolute;
-    height: 100%;
-    width: 50%;
-    background-color: #0467a0;
-    left: -50%;
-    top: 0;
-  }
+  // &::after {
+  //   content: '';
+  //   position: absolute;
+  //   height: 100%;
+  //   width: 50%;
+  //   // background-color: #0467a0;
+  //   left: -50%;
+  //   top: 0;
+  // }
 `;
 const Title = styled.div`
   // color: white;
@@ -97,13 +99,14 @@ const ActionsWrap = styled.div`
   padding: 0.5rem 1.5rem;
   display: flex;
   gap: 1.25rem;
+  flex: 5;
   color: ${theme.color.gray_200};
-  justify-content: space-between;
+  justify-content: flex-end;
   align-items: center;
 `;
 
 const BaseNavbar: React.FC<BaseNavbarType> = (props) => {
-  const { onClick, title } = props;
+  const { onClick, title, collapsed, setCollapsed } = props;
   const [menu, setMenu] = useState(false);
   const [dots, setDots] = useState(false);
   const [notification, setNotification] = useState(false);
@@ -111,8 +114,28 @@ const BaseNavbar: React.FC<BaseNavbarType> = (props) => {
 
   const breadcrumbs = ['Settings', 'Users'];
 
+  const CondenseNavigationMenuItem = styled.div`
+    color: ${theme.color.gray_200};
+    cursor: pointer;
+    display: flex;
+    padding: 1rem;
+    justify-content: center;
+    align-items: center;
+    & svg {
+      color: ${theme.color.gray_200};
+      transition: 200ms;
+    }
+  `;
+
   return (
     <NavbarWrap>
+      <CondenseNavigationMenuItem>
+        {collapsed ? <FaAngleRight /> : <FaAngleLeft />}
+      </CondenseNavigationMenuItem>
+      {/* item={{ icon: collapsed ? <FaAngleRight /> : <FaAngleLeft /> }}
+        // collapsed={collapsed}
+        // onClick={() => setCollapsed(!collapsed)}
+      /> */}
       <TitleWrap>
         <Title>
           {title}
@@ -126,6 +149,7 @@ const BaseNavbar: React.FC<BaseNavbarType> = (props) => {
           </Breadcrumbs> */}
         </Title>
       </TitleWrap>
+
       <ActionsWrap>
         {/* <BsThreeDotsVertical
           onClick={() => {
