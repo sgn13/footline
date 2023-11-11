@@ -11,8 +11,8 @@ type BaseToggleSwitchType = React.ComponentProps<'input'> &
 const StyledToggleSwitchWrapper = styled.label`
   position: relative;
   display: inline-block;
-  width: 4em;
-  height: 2em;
+  width: 3em;
+  height: 1.5em;
 `;
 
 const StyledToggleSwitch = styled.input.attrs({ type: 'checkbox' })`
@@ -30,13 +30,13 @@ const StyledIndicator = styled.span`
   background-color: #ccc;
   -webkit-transition: 0.4s;
   transition: 0.4s;
-  border-radius: 3.4em;
+  border-radius: 3em;
 
   &::before {
     position: absolute;
     content: '';
-    height: 1.5em;
-    width: 1.5em;
+    height: 1em;
+    width: 1em;
     left: 0.55em;
     bottom: 0.25em;
     background-color: white;
@@ -46,13 +46,13 @@ const StyledIndicator = styled.span`
   }
 
   ${StyledToggleSwitch}:checked + & {
-    background-color: ${theme.state.success.default};
+    background-color: ${theme.color.gray_700};
   }
 
   ${StyledToggleSwitch}:checked + &::before {
-    -webkit-transform: translateX(1.6em);
-    -ms-transform: translateX(1.6em);
-    transform: translateX(1.6em);
+    -webkit-transform: translateX(1.2em);
+    -ms-transform: translateX(1.2em);
+    transform: translateX(1.2em);
   }
 
   ${StyledToggleSwitch}:focus + & {
@@ -71,8 +71,8 @@ const BaseToggleSwitch: React.FC<BaseToggleSwitchType> = (props) => {
   const baseComponentProps = { name, label, required, errors, helpText, onClear, style, icon };
 
   return (
-    <BaseComponent {...baseComponentProps} onClick={onClick}>
-      <StyledToggleSwitchWrapper>
+    <BaseComponent {...baseComponentProps}>
+      <StyledToggleSwitchWrapper onClick={onClick}>
         <StyledToggleSwitch {...props} />
         <StyledIndicator />
       </StyledToggleSwitchWrapper>

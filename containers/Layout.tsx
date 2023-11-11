@@ -62,15 +62,15 @@ const Layout = ({
     <>
       <div id="overlays"></div>
       <AppBody>
-        <Sidebar
+        {/* <Sidebar
           sidebarItems={sidebar}
           collapsed={collapsed}
           setCollapsed={setCollapsed}
           active={active}
           setActive={setActive}
-        />
+        /> */}
         <div style={{ width: '100%' }}>
-          <Nav me={me} />
+          <Nav me={me} collapsed={collapsed} setCollapsed={setCollapsed} />
           <AppBodyWrapper>
             <Content />
             {/* <Footer /> */}

@@ -8,6 +8,8 @@ import { Provider } from 'react-redux';
 import AppThemeProvider from 'theme/provider';
 import AppRouter from './App';
 import { initializeStore } from './store';
+import { DndProvider } from 'react-dnd';
+import { HTML5Backend } from 'react-dnd-html5-backend';
 
 import { Chart, ArcElement, registerables } from 'chart.js';
 import ChartDataLabels from 'chartjs-plugin-datalabels';
@@ -17,11 +19,13 @@ const store = initializeStore();
 
 const App = () => {
   return (
+    // <DndProvider backend={HTML5Backend}>
     <Provider store={store}>
       <AppThemeProvider>
         <AppRouter />
       </AppThemeProvider>
     </Provider>
+    // </DndProvider>
   );
 };
 

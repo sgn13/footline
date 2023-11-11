@@ -151,7 +151,7 @@ const DataContainer = ({
         </div>
         <div style={{ display: 'flex' }}>
           {onAdd && (
-            <Button icon={<FaPlus />} style={{ width: 'fit-content' }} size="sm" onClick={onAdd}>
+            <Button icon={<FaPlus />} style={{ width: 'fit-content' }} size="md" onClick={onAdd}>
               Add {name}
             </Button>
           )}

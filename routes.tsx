@@ -11,6 +11,7 @@ const Login = React.lazy(() => import('pages/auth/Login'));
 const ForgotPassword = React.lazy(() => import('pages/auth/ForgotPassword'));
 const ResetPassword = React.lazy(() => import('pages/auth/ResetPassword'));
 const Table = React.lazy(() => import('pages/Table/Index'));
+const Charts = React.lazy(() => import('pages/Charts/Index'));
 
 import ExampleRoute from 'pages/example/routes';
 
@@ -22,7 +23,7 @@ import Calendar from 'pages/Calendar';
 export const routes = [
   {
     title: 'Home',
-    bodyConfig: { use: true, title: true, goBack: true },
+    bodyConfig: { use: true, title: false, goBack: false },
     path: '/',
     exact: true,
     component: IndexHOC(Index),
@@ -40,6 +41,13 @@ export const routes = [
     path: app.example1.root,
     exact: true,
     component: IndexHOC(Table),
+  },
+  {
+    title: 'Charts',
+    bodyConfig: { use: true, title: true, goBack: false },
+    path: app.chart.root,
+    exact: true,
+    component: IndexHOC(Charts),
   },
   ...ExampleRoute,
   {

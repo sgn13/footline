@@ -10,12 +10,14 @@ type BaseButtonType = React.ComponentProps<'button'> &
   StyledBaseComponentType & { ref?: any };
 
 const StyledButton = styled.button<BaseButtonType>`
-  ${({ size = 'md', primary = true, transparent = false, variant: buttonType, color }) => `
+  ${({ size, primary = true, transparent = false, variant: buttonType, color, btnType }) => `
     min-width: 6.25em;
     padding: ${size === 'lg' ? '0.625em 1em' : size === 'md' ? '0.5em .8em' : '0.4em .5em'};
 
     background-color: ${
       transparent
+        ? 'transparent'
+        : btnType === 'outlined'
         ? 'transparent'
         : primary
         ? `${StateColor({ type: buttonType })}`
@@ -27,11 +29,13 @@ const StyledButton = styled.button<BaseButtonType>`
     background-clip: padding-box;
     box-shadow: inset 0 1px inherit;
     width:fit-content;
-    font-size: ${size === 'lg' ? 1.875 : size === 'md' ? 1.375 : 1}rem;
+    font-size: ${size === 'lg' ? 1.875 : size === 'md' ? 1.125 : 1}rem;
     font-family: ${primary ? theme.font.primary : theme.font.secondary};
     color: ${
       color
         ? color
+        : btnType === 'outlined'
+        ? theme.font.primary
         : buttonType
         ? theme.color.white
         : primary
@@ -40,9 +44,9 @@ const StyledButton = styled.button<BaseButtonType>`
     };
     text-align: center;
     text-decoration: none;
-    text-shadow: 0 -1px rgb(0 0 0 / 69%);
+    // text-shadow: 0 -1px rgb(0 0 0 / 69%);
 
-    border: 0;
+    border: ${btnType === 'outlined' ? `1px solid ${theme.primary.default}` : '0'};
     border-radius: 0.3125em;
 
     appearance: none;
@@ -56,10 +60,13 @@ const StyledButton = styled.button<BaseButtonType>`
       background-color: ${
         transparent
           ? 'transparent'
+          : btnType === 'outlined'
+          ? theme.primary.default
           : primary
           ? `${StateColor({ type: buttonType, mode: 'hover' })}`
           : theme.secondary.default
       };
+      color: ${btnType === 'outlined' ? 'white' : 'inherit'};
     }
 
     &:focus, &:focus:hover {
@@ -104,10 +111,31 @@ const StyledBaseComponent = styled(BaseComponent)`
 `;
 
 const BaseButton: React.FC<BaseButtonType> = (props) => {
-  const { children, icon, name, label, required, errors, helpText, onClear, style, dropdown } =
-    props;
+  const {
+    children,
+    icon,
+    name,
+    label,
+    required,
+    errors,
+    helpText,
+    onClear,
+    style,
+    dropdown,
+    btnType = 'contained',
+  } = props;
 
-  const baseComponentProps = { name, label, required, errors, helpText, onClear, style, icon };
+  const baseComponentProps = {
+    name,
+    label,
+    required,
+    errors,
+    helpText,
+    onClear,
+    style,
+    icon,
+    btnType,
+  };
 
   return (
     <StyledBaseComponent {...baseComponentProps}>

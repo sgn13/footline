@@ -7,4 +7,5 @@ export type StyledButtonType = {
   transparent?: boolean;
   icon?: JSX.Element;
   dropdown?: boolean;
+  btnType?:String;
 };

@@ -13,7 +13,7 @@ import { FiLogOut } from 'react-icons/fi';
 import { AiOutlineEye, AiOutlineDelete } from 'react-icons/ai';
 import { logout } from 'store/app/actions';
 import BaseSidebarItem from 'containers/Sidebar/SidebarItem';
-import { FaAngleLeft, FaAngleRight } from 'react-icons/fa';
+import { FaAngleLeft, FaAngleRight, FaBars } from 'react-icons/fa';
 
 type BaseNavbarType = React.ComponentProps<'div'> &
   StyledNavbarType &
@@ -63,9 +63,10 @@ const Logo = styled.img`
 `;
 const TitleWrap = styled.div`
   flex: 1;
-  padding: 0.75rem 0;
+  padding: 0.5rem 1rem;
   display: flex;
-  flex-direction: column;
+  align-items: center;
+  /* flex-direction: column; */
   justify-content: space-between;
   position: relative;
   // &::after {
@@ -79,9 +80,12 @@ const TitleWrap = styled.div`
   // }
 `;
 const Title = styled.div`
-  // color: white;
+  color: white;
   font-weight: bold;
-  padding-left: 1rem;
+  font-size: 1.5rem;
+  display: flex;
+  align-items: center;
+  /* padding-left: 1rem; */
 `;
 const Breadcrumbs = styled.div`
   display: flex;
@@ -123,22 +127,28 @@ const BaseNavbar: React.FC<BaseNavbarType> = (props) => {
     align-items: center;
     & svg {
       color: ${theme.color.gray_200};
+      font-size: 1.25rem;
       transition: 200ms;
     }
   `;
 
   return (
     <NavbarWrap>
-      <CondenseNavigationMenuItem>
-        {collapsed ? <FaAngleRight /> : <FaAngleLeft />}
-      </CondenseNavigationMenuItem>
+      {/* <CondenseNavigationMenuItem onClick={() => setCollapsed(!collapsed)}>
+        {collapsed ? <FaBars /> : <FaBars />}
+      </CondenseNavigationMenuItem> */}
       {/* item={{ icon: collapsed ? <FaAngleRight /> : <FaAngleLeft /> }}
         // collapsed={collapsed}
         // onClick={() => setCollapsed(!collapsed)}
       /> */}
       <TitleWrap>
         <Title>
-          {title}
+          <span style={{ color: 'red', fontWeight: 'bolder' }}>FOOT</span>Line
+          <div
+            style={{ height: '20px', width: '15px', background: 'yellow', marginLeft: '0.25rem' }}>
+            {' '}
+          </div>
+          {/* {title} */}
           {/* <Breadcrumbs>
             {breadcrumbs.map((breadcrumb, index) => (
               <>
@@ -172,7 +182,7 @@ const BaseNavbar: React.FC<BaseNavbarType> = (props) => {
             <MenuItem icon={<BsPlusCircle />}>Publish and add new</MenuItem>
           </Menu>
         )} */}
-        <IoMdNotificationsOutline
+        {/* <IoMdNotificationsOutline
           id="notification"
           style={{ fontSize: '25px' }}
           onClick={() => {
@@ -186,8 +196,8 @@ const BaseNavbar: React.FC<BaseNavbarType> = (props) => {
           <Menu>
             <MenuItem>No New Notification</MenuItem>
           </Menu>
-        )}
-        <div
+        )} */}
+        {/* <div
           style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', cursor: 'pointer' }}
           onClick={() => {
             setMenu(false);
@@ -197,13 +207,13 @@ const BaseNavbar: React.FC<BaseNavbarType> = (props) => {
           }}>
           <Avatar id="avatar" src="https://randomuser.me/api/portraits/men/1.jpg" />
           <div>John Doe</div>
-        </div>
+        </div> */}
 
-        {avatar && (
+        {/* {avatar && (
           <Menu onClick={logout}>
             <MenuItem icon={<FiLogOut />}>Logout</MenuItem>
           </Menu>
-        )}
+        )} */}
       </ActionsWrap>
     </NavbarWrap>
   );

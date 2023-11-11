@@ -6,12 +6,13 @@ export const api = {
   example:'/example_api'
 };
 
-const appRoot = {calendar:'/calendar', example1: '/example1', example2: '/example2' };
+const appRoot = {calendar:'/calendar', chart:'/charts', example1: '/example1', example2: '/example2', };
 
 export const app = {
   me: '/',
   changepassword: '/change-password',
   calendar: { root: appRoot.calendar },
+  chart: { root: appRoot.chart },
   example1: { root: appRoot.example1 },
   example2: {
     root: appRoot.example2,

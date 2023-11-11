@@ -7,11 +7,12 @@ type BaseSidebarItemType = React.ComponentProps<'a'> & StyledSidebarItemType & {
 
 const NavItemContents = styled.div<{ collapsed }>`
   display: flex;
-  width: ${({ collapsed }) => (collapsed ? `2rem` : '14rem;')};
-  height: 2rem;
+  width: ${({ collapsed }) => (collapsed ? `auto` : '100%')};
+  // width: 100%;
+  height: 2.5rem;
   align-items: center;
   padding: 1.125rem;
-  font-size: 1.125rrem;
+  font-size: 1.25rem;
 `;
 
 const Label = styled.span`
@@ -29,7 +30,6 @@ const BaseSidebarItem: React.FC<BaseSidebarItemType> = (props) => {
   const { collapsed, active, item, history, setActive } = props;
   const [change, setChange] = useState(false);
   const [isOpen, setIsOpen] = useState(false);
-  console.log(item, 'item');
   useEffect(() => {
     active == item.label ? setChange(true) : setChange(false);
   }, [active]);
@@ -82,9 +82,9 @@ const BaseSidebarItem: React.FC<BaseSidebarItemType> = (props) => {
         <NavItemContents collapsed={collapsed} onClick={() => setIsOpen((prev) => !prev)}>
           {item.icon}
           {item.label && !collapsed && <Label>{item.label}</Label>}
-          {!!(item.children && item.children.length) && (
+          {/* {!!(item.children && item.children.length) && (
             <> {isOpen ? <FaChevronDown /> : <FaChevronLeft />}</>
-          )}
+          )} */}
         </NavItemContents>
       </NavigationMenuItem>
       {isOpen &&

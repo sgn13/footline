@@ -35,11 +35,12 @@ const AppRouter: React.FC<PropsFromRedux> = ({ fetchPermissions, fetchMe, me }) 
     //     Hello
     //     <Dnd/>
     //   </DndProvider>
-    <BrowserRouter>
-      <ScrollToTop />
-      <React.Suspense fallback={<>Loading ...</>}>
-        <Switch>
-          {authRoutes.map((route, idx) => (
+    <DndProvider backend={HTML5Backend}>
+      <BrowserRouter>
+        <ScrollToTop />
+        <React.Suspense fallback={<>Loading ...</>}>
+          <Switch>
+            {/* {authRoutes.map((route, idx) => (
             <Route
               key={idx}
               path={route.path}
@@ -54,8 +55,8 @@ const AppRouter: React.FC<PropsFromRedux> = ({ fetchPermissions, fetchMe, me }) 
                 </Body>
               )}
             />
-          ))}
-
+          ))} */}
+            {/* 
           {messageRoutes.map((route, idx) => (
             <Route
               key={idx}
@@ -67,8 +68,8 @@ const AppRouter: React.FC<PropsFromRedux> = ({ fetchPermissions, fetchMe, me }) 
                 </PageTitle>
               )}
             />
-          ))}
-          {/* <Route
+          ))} */}
+            {/* <Route
             path="/"
             exact
             children={(props) =>
@@ -81,13 +82,13 @@ const AppRouter: React.FC<PropsFromRedux> = ({ fetchPermissions, fetchMe, me }) 
               )
             }
           /> */}
-          {/* <Route
+            {/* <Route
             children={(props) =>
               sessionStorage.getItem('token') ? <Layout {...props} /> : <Redirect to="/" />
             }
           /> */}
-          <Route children={(props) => <Layout {...props} />} />
-          {/* {routes.map((route, idx) => (
+            <Route children={(props) => <Layout {...props} />} />
+            {/* {routes.map((route, idx) => (
             <Route
               key={idx}
               path={route.path}
@@ -99,9 +100,11 @@ const AppRouter: React.FC<PropsFromRedux> = ({ fetchPermissions, fetchMe, me }) 
               )}
             />
           ))} */}
-        </Switch>
-      </React.Suspense>
-    </BrowserRouter>
+          </Switch>
+        </React.Suspense>
+      </BrowserRouter>
+      /{' '}
+    </DndProvider>
   );
 };
 

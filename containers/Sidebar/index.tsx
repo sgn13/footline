@@ -11,7 +11,7 @@ type BaseSidebarType = React.ComponentProps<'div'> &
   StyledBaseComponentType & { type?: any; ref?: any };
 
 const StyledSidebarWrapper = styled.div<{ collapsed?: boolean; mobile?: boolean }>`
-  width: ${({ collapsed }) => (collapsed ? '56px' : '240px')};
+  width: ${({ collapsed }) => (collapsed ? '56px' : '300px')};
   height: ${theme.constant.bodyHeight};
   top: 0;
   z-index: 100;
@@ -68,13 +68,14 @@ const BaseSidebar: React.FC<BaseSidebarType> = (props) => {
     width: 100%;
     display: flex;
     padding:2rem;
+    text-align:center;
     cursor: pointer;
   color:${theme.primary.default};
   font-size:2rem;
   font-weight:500;
     flex-direction: column;
     align-items: center;
-    padding-left: ${collapsed ? `7px` : `10px`};
+    // padding-left: ${collapsed ? `7px` : `10px`};
     border: none;
     outline: none;
     transition: 300ms;
@@ -84,7 +85,7 @@ const BaseSidebar: React.FC<BaseSidebarType> = (props) => {
 
   return (
     <StyledSidebarWrapper collapsed={collapsed} mobile={mobile}>
-      <NavigationMenuItem>LOGO</NavigationMenuItem>
+      <NavigationMenuItem>{collapsed ? 'L' : 'LOGO'}</NavigationMenuItem>
       <NavTop>
         {sidebarItems
           .filter((item) => item.location === 'top')
@@ -109,11 +110,11 @@ const BaseSidebar: React.FC<BaseSidebarType> = (props) => {
             <BaseSidebarItem item={item} collapsed={collapsed} />
           ))}
       </NavBottom>
-      <CondenseNavigationMenuItem
+      {/* <CondenseNavigationMenuItem
         item={{ icon: collapsed ? <FaAngleRight /> : <FaAngleLeft /> }}
         collapsed={collapsed}
         onClick={() => setCollapsed(!collapsed)}
-      />
+      /> */}
     </StyledSidebarWrapper>
   );
 };

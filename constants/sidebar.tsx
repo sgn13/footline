@@ -7,6 +7,7 @@ import {
   FaAngellist,
   FaCalendar,
   FaCalendarAlt,
+  FaChartBar,
   FaHome,
 } from 'react-icons/fa';
 
@@ -31,6 +32,12 @@ export const IndexSidebar = ({}) => [
     label: 'Calendar',
     location: 'top',
     path: app.calendar.root,
+  },
+  {
+    icon: <FaChartBar />,
+    label: 'Charts',
+    location: 'top',
+    path: app.chart.root,
   },
   {
     icon: <FaAccessibleIcon />,

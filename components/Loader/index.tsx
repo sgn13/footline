@@ -121,23 +121,24 @@ const LoaderWrapper = styled.div`
 
 const Loader = () => {
   return (
-    <LoaderWrapper>
-      <img className="app-logo" src={require('assets/images/logo.png').default} />
-      <div className="inner">
-        <div className="loader-line-wrap">
-          <div className="loader-line"></div>
-        </div>{' '}
-        <div className="loader-line-wrap">
-          <div className="loader-line"></div>
-        </div>{' '}
-        <div className="loader-line-wrap">
-          <div className="loader-line"></div>
-        </div>{' '}
-        <div className="loader-line-wrap">
-          <div className="loader-line"></div>
-        </div>
-      </div>
-    </LoaderWrapper>
+    <div>Loading...</div>
+    // <LoaderWrapper>
+    //   <img className="app-logo" src={require('assets/images/logo.png').default} />
+    //   <div className="inner">
+    //     <div className="loader-line-wrap">
+    //       <div className="loader-line"></div>
+    //     </div>{' '}
+    //     <div className="loader-line-wrap">
+    //       <div className="loader-line"></div>
+    //     </div>{' '}
+    //     <div className="loader-line-wrap">
+    //       <div className="loader-line"></div>
+    //     </div>{' '}
+    //     <div className="loader-line-wrap">
+    //       <div className="loader-line"></div>
+    //     </div>
+    //   </div>
+    // </LoaderWrapper>
   );
 };
 

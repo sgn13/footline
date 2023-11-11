@@ -31,7 +31,7 @@ const Body: React.FC<{
 
   return (
     <>
-      {config.use && (
+      {/* {config.use && (
         <BodyHeaderWrapper>
           <span>{config.title && title}</span>
           {config.goBack && (
@@ -41,7 +41,7 @@ const Body: React.FC<{
           )}
         </BodyHeaderWrapper>
       )}
-      <div />
+      <div /> */}
       {children}
     </>
   );

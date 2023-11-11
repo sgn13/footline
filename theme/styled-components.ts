@@ -30,7 +30,7 @@ const color = {
 };
 
 const basic = {
-  primary: { default: '#233A47', text: '#ffffff' },
+  primary: { default: '#316328', text: '#ffffff' },
   primary_light: { default: '#acb8bf', text: '#ffffff' },
   secondary: { default: '#c83734', text: '#ffffff' },
   tertiary: { default: '#F5F7FB', text: '#ffffff' },

@@ -16,6 +16,7 @@ const ModalWrap = styled.div<{ open: boolean }>`
   top: 50%;
   left: 50%;
   padding: 1rem;
+  border-radius: 8px;
   transition: 0.3s ease all;
   display: ${({ open }) => (open ? 'block' : 'none')};
   transform: translate(-50%, -50%);
@@ -28,6 +29,7 @@ const Header = styled.div`
   align-items: center;
   padding: 1rem;
   font-weight: 600;
+  border-radius: 8px 8px 0 0;
   color: ${theme.color.white};
 `;
 

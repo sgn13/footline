@@ -13,7 +13,7 @@ import Body from 'containers/Body';
 
 const ContentBody = styled.main`
   // width: 100%;
-  padding: 1rem;
+  /* padding: 1rem; */
   height: calc(100vh - ${theme.constant.appBar} - 35px);
   overflow-y: auto;
 
