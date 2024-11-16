@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { Route, BrowserRouter, Redirect, Switch } from 'react-router-dom';
+import { Route, BrowserRouter, HashRouter, Redirect, Switch } from 'react-router-dom';
 import { connect, ConnectedProps } from 'react-redux';
 import { AppState } from 'store/reducer';
 
@@ -36,7 +36,7 @@ const AppRouter: React.FC<PropsFromRedux> = ({ fetchPermissions, fetchMe, me }) 
     //     <Dnd/>
     //   </DndProvider>
     <DndProvider backend={HTML5Backend}>
-      <BrowserRouter>
+      <HashRouter>
         <ScrollToTop />
         <React.Suspense fallback={<>Loading ...</>}>
           <Switch>
@@ -102,7 +102,7 @@ const AppRouter: React.FC<PropsFromRedux> = ({ fetchPermissions, fetchMe, me }) 
           ))} */}
           </Switch>
         </React.Suspense>
-      </BrowserRouter>
+      </HashRouter>
       /{' '}
     </DndProvider>
   );
