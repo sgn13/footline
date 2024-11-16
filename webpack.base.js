@@ -35,6 +35,7 @@ const baseConfiguration = () => {
   }, {});
 
   return {
+    context: path.resolve(__dirname),
     entry: './index.tsx',
     node: { fs: 'empty' },
     module: {
@@ -65,7 +66,7 @@ const baseConfiguration = () => {
     },
 
     output: {
-      path: path.resolve(__dirname, 'tbuild'),
+      path: path.resolve(__dirname, 'build'),
       filename: 'bundle.js',
       publicPath: '/footline/',
     },

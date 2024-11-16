@@ -1,1 +1,0 @@
-(window.webpackJsonp=window.webpackJsonp||[]).push([[15],{508:function(n,e,t){"use strict";t.r(e),t.d(e,"pageName",(function(){return i}));var r=t(31),a=t.n(r),u=t(0),c=t.n(u),o=t(19),i="Charts",p=Object(o.b)((function(n){return a()(n),{}}),{});e.default=p((function(n){return a()(n),c.a.createElement(c.a.Fragment,null,"Bar")}))}}]);
