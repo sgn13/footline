@@ -63,9 +63,11 @@ const baseConfiguration = () => {
       extensions: ['*', '.js', '.jsx', '.tsx', '.ts'],
       alias,
     },
+
     output: {
       path: path.resolve(__dirname, 'tbuild'),
       filename: 'bundle.js',
+      publicPath: '/footline/',
     },
     plugins: [new webpack.DefinePlugin(envKeys)],
   };
