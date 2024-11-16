@@ -13,7 +13,7 @@ const StyledInput = styled.input<BaseInputType>`
     inputSize === 'lg' ? 1.2 : inputSize === 'md' ? 1 : 0.7}rem;
   height: ${({ inputSize = 'md' }) => (inputSize === 'lg' ? 50 : inputSize === 'md' ? 40 : 20)}px;
 
-  padding: ${({ inputIcon: icon }) => `1rem 1rem 1rem ${icon ? '3' : '.3'}rem;`};
+  /* padding: ${({ inputIcon: icon }) => `1rem 1rem 1rem ${icon ? '3' : '.3'}rem;`}; */
 
   position: relative;
   width: 100%;

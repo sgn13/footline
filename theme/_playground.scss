@@ -1,0 +1,329 @@
+// #playground {
+//   .container {
+//     width: 520px;
+//     height: 620px;
+//     margin: 0.75rem auto;
+//     // margin: 10px auto;
+//     background-color: #539a46;
+//     position: relative;
+//     .line {
+//       width: 525px;
+//       height: 625px;
+//       border: 3px solid #ffffff;
+//       position: absolute;
+//       left: 0px;
+//       right: 0px;
+//       top: 0px;
+//       bottom: 0px;
+//       &::before {
+//         border: 5px solid #539a46;
+//         bottom: -6px;
+//         content: '';
+//         left: -9px;
+//         position: absolute;
+//         right: -6px;
+//         top: -9px;
+//       }
+//     }
+//     .half {
+//       width: 100%;
+//       position: absolute;
+//       border: 2px solid white;
+//       top: 50%;
+//       left: 50%;
+//       transform: translateY(-50%) translateX(-50%);
+//     //   z-index: 200;
+//     }
+//     .panelty {
+//       width: 210px;
+//       height: 120px;
+//       border: 3px solid #ffffff;
+//       position: absolute;
+//     //   z-index: 220;
+
+//       background-color: #539a46;
+//       &.left {
+//         left: 50%;
+//         transform: translateY(0%) translateX(-50%);
+
+//         //   top:150px;
+//         //   border-left-color:transparent;
+//         //   border-left-width:0px;
+
+//         &::after {
+//           border: 3px solid #ffffff;
+//           border-top-color: transparent;
+//           border-top-width: 0px;
+//           content: '';
+//           left: 50%;
+//           transform: translateY(0%) translateX(-50%);
+//           position: absolute;
+//           right: 0px;
+//           padding: 1rem;
+//           top: 0;
+//         }
+//       }
+//       &.right {
+//         right: 50%;
+//         bottom: 0;
+//         transform: translateY(0%) translateX(50%);
+
+//         border-bottom-color: transparent;
+//         border-bottom-width: 0px;
+//         &::after {
+//           border: 3px solid #ffffff;
+//           border-bottom-color: transparent;
+//           border-bottom-width: 0px;
+//           //   bottom: 45px;
+//           content: '';
+//           left: 50%;
+//           transform: translateY(0%) translateX(-50%);
+
+//           position: absolute;
+//           right: 0px;
+//           padding: 1rem;
+//           bottom: 0;
+//         }
+//       }
+//     }
+//     // .p-spot {
+//     //   &.left {
+//     //     &:after {
+//     //       content: '\2022';
+//     //       position: absolute;
+//     //       color: #fff;
+//     //       font-size: 35px;
+//     //       top: 238px;
+//     //       left: 80px;
+//     //       z-index: 300;
+//     //     }
+//     //   }
+//     //   &.right {
+//     //     &:after {
+//     //       content: '\2022';
+//     //       position: absolute;
+//     //       color: #fff;
+//     //       font-size: 35px;
+//     //       top: 238px;
+//     //       right: 80px;
+//     //       z-index: 300;
+//     //     }
+//     //   }
+//     // }
+//     .center {
+//       position: absolute;
+//       width: 130px;
+//       height: 130px;
+//       border: 3px solid #ffffff;
+//       left: 50%;
+//       top: 50%;
+//       -webkit-border-radius: 50%;
+//       -moz-border-radius: 50%;
+//       border-radius: 50%;
+//       transform: translateY(-50%) translateX(-50%);
+
+//       &::after {
+//         background-color: #fff;
+//         border: 5px solid #fff;
+//         bottom: 55px;
+//         content: '';
+//         left: 55px;
+//         position: absolute;
+//         right: 55px;
+//         top: 55px;
+//         -webkit-border-radius: 50%;
+//         -moz-border-radius: 50%;
+//         border-radius: 50%;
+//       }
+//     }
+//     // .p-place {
+//     //   -webkit-border-radius: 50%;
+//     //   -moz-border-radius: 50%;
+//     //   border-radius: 50%;
+//     //   height: 130px;
+//     //   position: absolute;
+//     //   width: 150px;
+//     //   z-index: 210;
+//     //   border: 3px solid transparent;
+//     //   &.left {
+//     //     border-bottom-color: #fff;
+//     //     border-right-color: #fff;
+//     //     border-top-color: #fff;
+//     //     left: 0;
+//     //     top: 193px;
+//     //   }
+//     //   &.right {
+//     //     border-bottom-color: #fff;
+//     //     border-left-color: #fff;
+//     //     border-top-color: #fff;
+//     //     right: 0px;
+//     //     top: 193px;
+//     //   }
+//     // }
+//   }
+//   .teamA_player{
+//     position: absolute;
+//     z-index: 100;
+//     text-align: center;
+//   }
+// }
+
+#playground {
+  .container {
+    width: 750px;
+    height: 550px;
+    margin: 50px auto;
+    background-color: #539a46;
+    position: relative;
+    .line {
+      width: 756px;
+      height: 550px;
+      border: 3px solid #ffffff;
+      position: absolute;
+      left: 0px;
+      right: 0px;
+      top: 0px;
+      bottom: 0px;
+      &::before {
+        border: 5px solid #539a46;
+        bottom: -6px;
+        content: '';
+        left: -9px;
+        position: absolute;
+        right: -6px;
+        top: -9px;
+      }
+    }
+    .half {
+      width: 400px;
+      height: 550px;
+      position: absolute;
+      top: 0px;
+      border-right-color: #fff;
+      border-right-style: solid;
+      border-right-width: 4px;
+      left: 0px;
+      z-index: 200;
+    }
+    .panelty {
+      width: 110px;
+      height: 220px;
+      border: 3px solid #ffffff;
+      position: absolute;
+      z-index: 220;
+      background-color: #539a46;
+      &.left {
+        left: 3px;
+        top: 150px;
+        border-left-color: transparent;
+        border-left-width: 0px;
+
+        &::after {
+          border: 3px solid #ffffff;
+          border-left-color: transparent;
+          border-left-width: 0px;
+          bottom: 45px;
+          content: '';
+          left: 0px;
+          position: absolute;
+          right: 55px;
+          top: 45px;
+        }
+      }
+      &.right {
+        right: 0px;
+        top: 150px;
+        border-right-color: transparent;
+        border-right-width: 0px;
+        &::after {
+          border: 3px solid #ffffff;
+          border-right-color: transparent;
+          border-right-width: 0px;
+          bottom: 45px;
+          content: '';
+          left: 55px;
+          position: absolute;
+          right: 0px;
+          top: 45px;
+        }
+      }
+    }
+    .p-spot {
+      &.left {
+        &:after {
+          content: '\2022';
+          position: absolute;
+          color: #fff;
+          font-size: 35px;
+          top: 238px;
+          left: 80px;
+          z-index: 300;
+        }
+      }
+      &.right {
+        &:after {
+          content: '\2022';
+          position: absolute;
+          color: #fff;
+          font-size: 35px;
+          top: 238px;
+          right: 80px;
+          z-index: 300;
+        }
+      }
+    }
+    .center {
+      position: absolute;
+      width: 130px;
+      height: 130px;
+      border: 3px solid #ffffff;
+      left: 333px;
+      top: 193px;
+      -webkit-border-radius: 50%;
+      -moz-border-radius: 50%;
+      border-radius: 50%;
+      &::after {
+        background-color: #fff;
+        border: 5px solid #fff;
+        bottom: 55px;
+        content: '';
+        left: 55px;
+        position: absolute;
+        right: 55px;
+        top: 55px;
+        -webkit-border-radius: 50%;
+        -moz-border-radius: 50%;
+        border-radius: 50%;
+      }
+    }
+    .p-place {
+      -webkit-border-radius: 50%;
+      -moz-border-radius: 50%;
+      border-radius: 50%;
+      height: 130px;
+      position: absolute;
+      width: 150px;
+      z-index: 210;
+      border: 3px solid transparent;
+      &.left {
+        border-bottom-color: #fff;
+        border-right-color: #fff;
+        border-top-color: #fff;
+        left: 0;
+        top: 193px;
+      }
+      &.right {
+        border-bottom-color: #fff;
+        border-left-color: #fff;
+        border-top-color: #fff;
+        right: 0px;
+        top: 193px;
+      }
+    }
+  }
+  .teamA_player {
+    position: absolute;
+    z-index: 500;
+    text-align: center;
+  }
+}
